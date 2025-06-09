@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma mensagem especial e carinhosa para a Nathália Íngrid, com todo o meu amor.">
+    <meta name="keywords" content="amor, mensagem, Nathália Íngrid, carinho, especial, surpresa, fotos, galeria, dia dos namorados">
+    <meta name="author" content="Seu Amor">
+    <title>Sempre Você, Meu Amor ❤️</title>
+
+    <!-- Fontes do Google: Dancing Script (título principal), Anton (títulos fortes), Lora (texto principal elegante), Montserrat (geral/player) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Melhorar o anti-aliasing da fonte para um visual mais profissional */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Variáveis CSS para facilitar a manutenção das cores */
+        :root {
+            /* Paleta de Cores Principal: Rosa e Branco - Refinada para elegância */
+            --primary-rose: #FCE4EC; /* Rosa muito suave, quase pastel */
+            --light-rose: #FFF8FB;   /* Rosa mais claro, quase branco puro */
+            --dark-rose: #D8BFD8;    /* Tom de rosa/lavanda suave para contraste */
+            --accent-rose: #FF69B4;  /* Rosa vibrante para detalhes e destaque (botões, títulos) */
+            --text-dark-gray: #3A3A3A; /* Texto cinza escuro, mais suave e legível */
+            --white-pure: #FFFFFF;   /* Branco puro */
+
+            /* Cores para o player de música (Spotify-like) */
+            --player-bg: var(--white-pure); /* Fundo do player branco */
+            --player-control-color: var(--accent-rose); /* Cor principal dos controles */
+            --player-progress-fill: var(--accent-rose); /* Cor da barra de progresso */
+            --player-progress-track: #EFEFEF; /* Cor da trilha da barra de progresso mais clara */
+            --player-text-color: var(--text-dark-gray);
+            --player-card-shadow: rgba(0, 0, 0, 0.08); /* Sombra mais sutil para o card */
+            --player-button-hover: #FF8EB0; /* Hover para os botões do player */
+        }
+
+        /* Estilos globais do corpo da página */
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Lora', serif; /* Fonte principal para o corpo e frases */
+            background: linear-gradient(135deg, var(--light-rose), var(--primary-rose)); /* Gradiente rosa e branco */
+            color: var(--text-dark-gray);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container para os corações caindo (otimizado para performance e beleza) */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Permite que cliques passem através dos corações */
+            overflow: hidden;
+            z-index: 0; /* Garante que os corações fiquem no fundo */
+        }
+
+        /* Estilo de cada coração */
+        .heart {
+            position: absolute;
+            font-size: 24px; /* Corações um pouco maiores */
+            color: rgba(255, 105, 180, 0.6); /* Rosa mais suave e translúcido */
+            opacity: 0;
+            animation: fall linear infinite;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.4); /* Brilho rosa suave */
+        }
+
+        /* Animação de queda dos corações */
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) scale(0.7);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Estilo do título principal (Anton) */
+        h1 {
+            font-family: 'Anton', sans-serif; /* Fonte Anton */
+            font-size: 4.2em; /* Tamanho maior para Anton */
+            color: var(--accent-rose);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            letter-spacing: 2px; /* Mais espaçamento para Anton */
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase; /* Anton geralmente fica bem em uppercase */
+        }
+
+        /* Estilo do subtítulo (Lora) */
+        h2 {
+            font-family: 'Lora', serif; /* Nova fonte elegante */
+            font-size: 1.9em; /* Tamanho ligeiramente maior */
+            margin-top: 35px;
+            color: var(--text-dark-gray);
+            font-weight: 400; /* Peso da fonte mais leve para elegância */
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Container da foto com moldura e efeitos */
+        .foto-container {
+            margin-top: 30px;
+            display: inline-block;
+            border: 6px solid var(--accent-rose);
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 15px var(--accent-rose);
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .foto-container:hover {
+            transform: scale(1.04) rotate(1deg);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25), 0 0 20px var(--accent-rose);
+        }
+
+        .foto-container img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        /* Botão de coração com animação */
+        .heart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 100px;
+            color: #FF0000; /* Vermelho puro para o coração */
+            margin-top: 40px;
+            animation: pulse 2s infinite cubic-bezier(0.66, 0, 0.34, 1);
+            transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.6));
+            will-change: transform;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart-button:active {
+            transform: scale(0.9);
+            filter: drop-shadow(0 0 7px rgba(255, 0, 0, 0.4));
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.28); }
+            100% { transform: scale(1); }
+        }
+
+        /* Estilo da mensagem oculta (Lora) - CENTRALIZAÇÃO CORRIGIDA */
+        #mensagem {
+            font-family: 'Lora', serif; /* Nova fonte elegante */
+            font-size: 1.5em; /* Tamanho ligeiramente maior */
+            line-height: 1.7;
+            margin-top: 50px;
+            display: none;
+            animation: fadeIn 2s ease-in-out forwards;
+            white-space: pre-wrap; /* Preserva quebras de linha e espaços */
+            max-width: 900px; /* Largura máxima do bloco */
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: var(--text-dark-gray);
+            background-color: var(--white-pure); /* Fundo branco puro */
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+            margin-left: auto; /* Centraliza o bloco na horizontal */
+            margin-right: auto; /* Centraliza o bloco na horizontal */
+            text-align: center; /* Centraliza o texto dentro do bloco */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mensagem final removida - este ID não será mais usado */
+        #final {
+            display: none;
+        }
+
+        /* --- Estilos do NOVO Player de Música (Spotify-like Card) --- */
+        .music-player-card {
+            margin-top: 60px;
+            background-color: var(--player-bg);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px var(--player-card-shadow);
+            max-width: 420px; /* Largura refinada */
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px; /* Mais padding */
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Mais espaçamento */
+            width: 100%;
+            margin-bottom: 25px; /* Mais espaço */
+        }
+
+        .album-cover {
+            width: 90px; /* Capa um pouco maior */
+            height: 90px;
+            border-radius: 10px; /* Bordas levemente mais arredondadas */
+            object-fit: cover;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15); /* Sombra mais visível */
+        }
+
+        .text-info {
+            text-align: left;
+            flex-grow: 1;
+            color: var(--player-text-color);
+        }
+
+        .song-title {
+            font-family: 'Montserrat', sans-serif; /* Manter Montserrat para títulos de música */
+            font-size: 1.45em; /* Título da música maior */
+            font-weight: 700; /* Negrito */
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .artist-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05em; /* Artista maior */
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center; /* Centraliza o botão de play/pause */
+            align-items: center;
+            gap: 25px; /* Espaçamento, embora só tenha um botão principal */
+            margin-bottom: 25px;
+        }
+
+        .player-controls button {
+            background-color: transparent;
+            border: none;
+            color: var(--player-control-color);
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+            line-height: 1;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilo dos ícones SVG para o botão de play/pause */
+        .player-controls button svg {
+            fill: currentColor; /* Usa a cor do botão */
+        }
+
+        .player-controls .main-play-btn svg {
+            width: 50px; /* Botão play/pause maior */
+            height: 50px;
+            color: var(--accent-rose); /* Cor rosa vibrante */
+        }
+
+        .player-controls button:hover {
+            transform: scale(1.15);
+            color: var(--player-button-hover);
+        }
+
+        .player-controls button:active {
+            transform: scale(0.95);
+        }
+
+        .progress-and-volume {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            color: var(--player-text-color);
+            font-size: 0.9em;
+        }
+
+        #progressBar {
+            flex-grow: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: var(--player-progress-track);
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #progressBar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: var(--player-progress-fill);
+            border-radius: 50%;
+            cursor: grab;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            margin-top: 0;
+        }
+
+        #progressBar::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: var(--player-progress-fill);
+            border-radius: 50%;
+            cursor: grab;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Controle de volume removido */
+        .volume-control-container {
+            display: none;
+        }
+
+        /* Botões de seleção de faixa (lista de reprodução) - Apenas 1 botão agora */
+        .track-selection-buttons-list {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .track-selection-buttons-list button {
+            padding: 10px 18px;
+            border: 1px solid var(--primary-rose);
+            background-color: var(--white-pure);
+            color: var(--text-dark-gray);
+            font-weight: 500;
+            border-radius: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease, color 0.2s ease;
+            text-transform: capitalize;
+            letter-spacing: 0.3px;
+        }
+
+        .track-selection-buttons-list button.active {
+            background-color: var(--accent-rose);
+            color: var(--white-pure);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .track-selection-buttons-list button:hover {
+            background-color: var(--primary-rose);
+            color: var(--white-pure);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .track-selection-buttons-list button:active {
+            transform: scale(0.98);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Estilos da Galeria de Fotos --- */
+        .gallery-section {
+            margin-top: 100px;
+            padding: 50px 30px;
+            background-color: var(--white-pure);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Anton', sans-serif; /* Fonte Anton para o título da galeria */
+            font-size: 3em; /* Tamanho maior */
+            margin-bottom: 50px;
+            color: var(--accent-rose);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.06) rotate(1.5deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* --- Lightbox (Modal de Imagem Ampliada) --- */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Fundo mais escuro para maior contraste */
+            backdrop-filter: blur(12px); /* Mais desfoque para um efeito profissional */
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--white-pure);
+            border-radius: 25px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        .lightbox-overlay.active .lightbox-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .lightbox-caption {
+            color: var(--text-dark-gray);
+            font-size: 1.2em;
+            font-weight: 400;
+            max-width: 90%;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Estilo dos botões de navegação do lightbox (com SVGs) */
+        .lightbox-close, .lightbox-nav {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white-pure);
+            font-size: 3em; /* Tamanho dos ícones SVG */
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-shadow: 0 0 8px rgba(0,0,0,0.6);
+            padding: 0; /* Garante que o SVG preencha o botão */
+            line-height: 1;
+        }
+        .lightbox-close svg, .lightbox-nav svg {
+            fill: currentColor; /* Permite que o SVG herde a cor do botão */
+            width: 1em; /* 1em é o tamanho da fonte do pai, então 3em aqui */
+            height: 1em;
+        }
+
+
+        .lightbox-close:hover, .lightbox-nav:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .lightbox-nav.prev {
+            left: 20px;
+            right: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-nav.next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5em; }
+            h2 { font-size: 1.7em; }
+            .foto-container img { width: 220px; height: 220px; }
+            .heart-button { font-size: 90px; }
+            #mensagem { font-size: 1.3em; padding: 20px; }
+            .music-player-card { padding: 25px; max-width: 380px; }
+            .album-cover { width: 70px; height: 70px; }
+            .song-title { font-size: 1.3em; }
+            .artist-name { font-size: 0.95em; }
+            .player-controls { gap: 25px; }
+            .player-controls .main-play-btn svg { width: 45px; height: 45px; }
+            .progress-bar-container { font-size: 0.85em; }
+            .track-selection-buttons-list { gap: 8px; margin-top: 20px; }
+            .track-selection-buttons-list button { padding: 8px 15px; font-size: 0.85em; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+            .gallery-item img { height: 180px; }
+            .gallery-section h2 { font-size: 2.5em; margin-bottom: 40px; }
+            .lightbox-close, .lightbox-nav { font-size: 2.5em; width: 45px; height: 45px; }
+            .lightbox-caption { font-size: 1.1em; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 15px; }
+            h1 { font-size: 3em; letter-spacing: 1px; }
+            h2 { font-size: 1.5em; margin-top: 25px; }
+            .foto-container { margin-top: 20px; padding: 6px; }
+            .foto-container img { width: 150px; height: 150px; }
+            .heart-button { font-size: 65px; margin-top: 30px; }
+            #mensagem { font-size: 1.1em; margin-top: 35px; padding: 15px; }
+            .music-player-card { padding: 20px; max-width: 100%; border-radius: 20px; }
+            .track-info { flex-direction: column; text-align: center; gap: 10px; margin-bottom: 15px;}
+            .album-cover { width: 60px; height: 60px; border-radius: 6px; }
+            .song-title { font-size: 1.1em; }
+            .artist-name { font-size: 0.85em; }
+            .player-controls { gap: 15px; margin-bottom: 15px;}
+            .player-controls .main-play-btn svg { width: 40px; height: 40px; }
+            .progress-bar-container { font-size: 0.7em; }
+            #progressBar { height: 4px; }
+            #progressBar::-webkit-slider-thumb, #progressBar::-moz-range-thumb { width: 14px; height: 14px; }
+            .track-selection-buttons-list { flex-direction: column; gap: 8px; margin-top: 15px; }
+            .track-selection-buttons-list button { width: 90%; max-width: 200px; font-size: 0.8em; padding: 8px 12px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; }
+            .gallery-item img { height: 100px; border-radius: 15px;}
+            .gallery-section h2 { font-size: 2.2em; margin-bottom: 30px; letter-spacing: 1px;}
+            .lightbox-close, .lightbox-nav { font-size: 2em; width: 40px; height: 40px; }
+            .lightbox-nav.prev, .lightbox-nav.next { top: auto; bottom: 10px; transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Container para os corações caindo -->
+    <div class="hearts-container"></div>
+
+    <header>
+        <h1>Sempre Você, Meu Amor</h1>
+    </header>
+
+    <main>
+        <div class="foto-container">
+            <!-- A imagem '1.jpg' deve estar na mesma pasta 'img' ou na raiz, dependendo da sua organização. -->
+            <img src="img/1.jpg" alt="Foto especial de Nathália Íngrid e eu" onerror="this.onerror=null; this.src='https://placehold.co/280x280/F7E6F0/FF69B4?text=Nossa+Foto';">
+        </div>
+
+        <h2>Toque no coração para a sua mensagem especial:</h2>
+        <button class="heart-button" onclick="mostrarMensagem()" aria-label="Toque para ver a mensagem">❤️</button>
+
+        <p id="mensagem"></p>
+        <!-- A mensagem final foi removida como solicitado -->
+        <!-- O div com id="final" foi removido completamente do HTML. -->
+
+        <!-- NOVO PLAYER DE MÚSICA (Spotify-like Card) -->
+        <div class="music-player-card">
+            <div class="track-info">
+                <!-- Capa do Álbum - Placeholder, substitua por uma imagem real se tiver -->
+                <img src="https://placehold.co/80x80/FFC0CB/FF69B4?text=Capa" alt="Capa do Álbum da Música" class="album-cover">
+                <div class="text-info">
+                    <div class="song-title" id="currentSongTitle">Bebê Confesso</div>
+                    <div class="artist-name" id="currentArtistName">Dilsinho</div>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <!-- Botões de voltar e avançar foram removidos -->
+                <button class="main-play-btn" id="playPauseBtn" onclick="togglePlayPause()" aria-label="Tocar Música">
+                    <!-- SVG para o botão de play/pause -->
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path id="playPausePath" d="M8 5v14l11-7z"/> <!-- Ícone de play (triângulo) -->
+                    </svg>
+                </button>
+                <!-- Botão de avançar foi removido -->
+            </div>
+
+            <div class="progress-and-volume">
+                <div class="progress-bar-container">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="progressBar" value="0" step="0.1" min="0" max="100" aria-label="Barra de progresso da música">
+                    <span id="duration">0:00</span>
+                </div>
+                <!-- O controle de volume foi removido como solicitado -->
+            </div>
+        </div>
+
+        <!-- Lista de Botões de Seleção de Música (apenas um botão agora) -->
+        <div class="track-selection-buttons-list">
+            <button onclick="trocarMusica(0)" aria-label="Tocar Bebê Confesso">Bebê Confesso</button>
+        </div>
+        <!-- FIM DO NOVO PLAYER DE MÚSICA -->
+
+        <audio id="musica" loop>
+            <!-- Substitua a URL da música "Bebê Confesso" aqui -->
+            <source id="musicaSource" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- --- Seção da Galeria de Fotos --- -->
+        <section class="gallery-section">
+            <h2>Nossas Memórias em Imagens</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Apenas 3 fotos na galeria, com index passado para openLightbox -->
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="img/2.jpg" alt="Nathália Íngrid e eu, nosso primeiro encontro. ❤️" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F7E6F0/FF69B4?text=Foto+2';">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="img/3.jpg" alt="Nathália Íngrid e eu, aquele dia na praia. ☀️" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F7E6F0/FF69B4?text=Foto+3';">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="img/4.jpg" alt="Nathália Íngrid e eu, seu sorriso que ilumina. 😍" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F7E6F0/FF69B4?text=Foto+4';">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- Lightbox HTML --- -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <img src="" alt="Imagem Ampliada" class="lightbox-image" id="lightboxImage">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fechar Imagem">
+                <!-- SVG para o botão de fechar -->
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Imagem Anterior">
+                <!-- SVG para o botão de voltar no lightbox -->
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+            <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Próxima Imagem">
+                <!-- SVG para o botão de avançar no lightbox -->
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Função utilitária para formatar o tempo (segundos para MM:SS)
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Única mensagem para o Dia dos Namorados (Personalizada para Nathália Íngrid)
+        const mensagemUnica = `
+            Meu amor, Nathália Íngrid, neste Dia dos Namorados e em todos os dias,
+            você é a minha maior alegria e a estrela que guia meu caminho.
+            Cada momento ao seu lado é um presente, e eu sou infinitamente grato(a)
+            por ter você na minha vida. Que o nosso amor continue crescendo
+            e florescendo, iluminando cada passo da nossa jornada.
+            Te amo, hoje e para sempre!
+            💖
+        `;
+
+        // Array com as informações da música (apenas uma música agora)
+        const musicas = [
+            { title: "Bebê Confesso", artist: "Dilsinho", src: "https://www.bensound.com/bensound-music/bensound-romantic.mp3", cover: "https://placehold.co/80x80/FFC0CB/FF69B4?text=Capa+BB" } // Placeholder: substitua por sua URL real e capa
+        ];
+
+        let currentMusicIndex = 0; // Índice da música atualmente tocando
+        const musica = document.getElementById("musica");
+        const musicaSource = document.getElementById("musicaSource");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const playPausePath = document.getElementById("playPausePath"); // O path do SVG do botão play/pause
+        const progressBar = document.getElementById("progressBar");
+        const currentTimeSpan = document.getElementById("currentTime");
+        const durationSpan = document.getElementById("duration");
+        const currentSongTitle = document.getElementById("currentSongTitle");
+        const currentArtistName = document.getElementById("currentArtistName");
+        const albumCover = document.querySelector(".album-cover");
+
+        // Função para atualizar as informações da música no player
+        function updatePlayerInfo() {
+            const song = musicas[currentMusicIndex];
+            currentSongTitle.innerText = song.title;
+            currentArtistName.innerText = song.artist;
+            albumCover.src = song.cover; // Atualiza a capa do álbum
+            
+            // Atualiza o estado visual do botão ativo na lista de seleção de faixas
+            const trackButtons = document.querySelectorAll('.track-selection-buttons-list button');
+            trackButtons.forEach((btn, index) => {
+                if (index === currentMusicIndex) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Função para exibir a mensagem única
+        function mostrarMensagem() {
+            const mensagemElement = document.getElementById("mensagem");
+            const lightboxOverlay = document.getElementById('lightboxOverlay');
+
+            // Garante que o lightbox esteja fechado
+            closeLightbox(); // Usa a função de fechar do lightbox
+
+            // Reseta animações e esconde elementos
+            mensagemElement.style.display = "none";
+            mensagemElement.style.opacity = 0;
+            mensagemElement.style.transform = 'translateY(30px)';
+
+            // Define e exibe a mensagem principal
+            mensagemElement.innerText = mensagemUnica;
+            mensagemElement.style.display = "block";
+
+            setTimeout(() => {
+                mensagemElement.style.opacity = 1;
+                mensagemElement.style.transform = 'translateY(0)';
+            }, 50);
+
+            // Código para criar partículas ao clicar no coração
+            const heartButton = document.querySelector('.heart-button');
+            const rect = heartButton.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('span');
+                particle.innerText = '✨';
+                particle.style.position = 'absolute';
+                particle.style.fontSize = `${10 + Math.random() * 10}px`;
+                particle.style.opacity = '1';
+                particle.style.left = `${centerX}px`;
+                particle.style.top = `${centerY}px`;
+                particle.style.pointerEvents = 'none';
+
+                document.body.appendChild(particle);
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 50 + Math.random() * 80;
+                const endX = centerX + Math.cos(angle) * distance;
+                const endY = centerY + Math.sin(angle) * distance;
+
+                particle.animate([
+                    { transform: `translate(0, 0)`, opacity: 1 },
+                    { transform: `translate(${endX - centerX}px, ${endY - centerY}px)`, opacity: 0 }
+                ], {
+                    duration: 1200 + Math.random() * 800,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => particle.remove(), 2000);
+            }
+        }
+
+        // Função para trocar a música por índice (apenas uma música agora)
+        function trocarMusica(indice) {
+            // Como só há uma música, sempre tocamos a primeira (índice 0)
+            currentMusicIndex = 0; 
+            
+            musicaSource.src = musicas[currentMusicIndex].src;
+            musica.load(); 
+            musica.play()
+                .then(() => {
+                    playPausePath.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z'); // Ícone de pausa (barras verticais)
+                    playPauseBtn.setAttribute('aria-label', 'Pausar Música');
+                })
+                .catch(e => console.log("Erro ao tocar música:", e));
+            
+            updatePlayerInfo(); // Atualiza título, artista e capa
+        }
+
+        // Função para alternar entre tocar e pausar a música
+        function togglePlayPause() {
+            if (musica.paused) {
+                musica.play()
+                    .then(() => {
+                        playPausePath.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z'); // Ícone de pausa
+                        playPauseBtn.setAttribute('aria-label', 'Pausar Música');
+                    })
+                    .catch(e => console.log("Erro ao tentar tocar música:", e));
+            } else {
+                musica.pause();
+                playPausePath.setAttribute('d', 'M8 5v14l11-7z'); // Ícone de play (triângulo)
+                playPauseBtn.setAttribute('aria-label', 'Tocar Música');
+            }
+        }
+
+        // Event listeners para o player de música
+        musica.addEventListener('loadedmetadata', () => {
+            durationSpan.innerText = formatTime(musica.duration);
+            progressBar.max = musica.duration;
+            musica.volume = 0.7; // Define volume padrão em 70%
+        });
+
+        musica.addEventListener('timeupdate', () => {
+            currentTimeSpan.innerText = formatTime(musica.currentTime);
+            progressBar.value = musica.currentTime;
+        });
+
+        progressBar.addEventListener('input', () => {
+            musica.currentTime = progressBar.value;
+        });
+
+        // --- Variáveis e Funções para a Galeria de Fotos (Lightbox) ---
+        let galleryImageElements = []; 
+        
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            // Garante que o array de elementos da galeria esteja atualizado
+            galleryImageElements = Array.from(document.querySelectorAll('.gallery-item img')); 
+            
+            if (index >= 0 && index < galleryImageElements.length) {
+                currentImageIndex = index;
+                const imgElement = galleryImageElements[currentImageIndex];
+                
+                lightboxImage.src = imgElement.src;
+                lightboxCaption.innerText = imgElement.dataset.caption || imgElement.alt; 
+                
+                lightboxOverlay.style.display = 'flex';
+                // Pequeno atraso para permitir que o 'display: flex' seja aplicado antes da transição de opacidade
+                setTimeout(() => {
+                    lightboxOverlay.classList.add('active');
+                }, 10);
+            }
+        }
+
+        function closeLightbox() {
+            lightboxOverlay.classList.remove('active');
+            setTimeout(() => {
+                lightboxOverlay.style.display = 'none';
+                lightboxImage.src = '';
+                lightboxCaption.innerText = '';
+            }, 400);
+        }
+
+        function navigateLightbox(direction) {
+            galleryImageElements = Array.from(document.querySelectorAll('.gallery-item img'));
+            currentImageIndex += direction;
+
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImageElements.length - 1;
+            } else if (currentImageIndex >= galleryImageElements.length) {
+                currentImageIndex = 0; 
+            }
+
+            const nextImageElement = galleryImageElements[currentImageIndex];
+            lightboxImage.src = nextImageElement.src;
+            lightboxCaption.innerText = nextImageElement.dataset.caption || nextImageElement.alt;
+        }
+
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                closeLightbox();
+            }
+            if (lightboxOverlay.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            }
+        });
+        // --- Fim das Funções para a Galeria de Fotos ---
+
+        // --- Código para a animação de corações caindo ---
+        const heartsContainer = document.querySelector('.hearts-container');
+        // Reduzido para 3 corações caindo simultaneamente (para melhor performance)
+        const numberOfHearts = 3; 
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = '❤️'; // O emoji de coração
+            
+            // Posição inicial aleatória no topo da tela
+            heart.style.left = `${Math.random() * 100}vw`;
+            // Tamanho aleatório do coração
+            heart.style.fontSize = `${15 + Math.random() * 20}px`; /* Corações um pouco menores e com variação */
+            /* Transparência aleatória para corações */
+            heart.style.opacity = `${0.4 + Math.random() * 0.4}`; /* Entre 0.4 e 0.8 */
+
+            // Duração da animação aleatória para variação (mais lentos)
+            heart.style.animationDuration = `${10 + Math.random() * 10}s`; /* Entre 10s e 20s */
+            // Atraso da animação aleatório para que não caiam todos juntos (mais dispersos)
+            heart.style.animationDelay = `-${Math.random() * 25}s`; /* Atraso negativo maior */
+            
+            heartsContainer.appendChild(heart);
+
+            // Remove o coração do DOM após a animação para otimização
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+
+        // Evento que é disparado quando todo o conteúdo do DOM é carregado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializa o volume do áudio
+            musica.volume = 0.7; // Define um volume padrão de 70%
+
+            // Tenta tocar a música automaticamente.
+            // Navegadores modernos podem bloquear o autoplay sem interação do usuário.
+            musica.play().catch(e => {
+                console.log("Autoplay de música bloqueado. O usuário precisa interagir para iniciar.", e);
+            });
+
+            // Atualiza as informações do player ao carregar a página (primeira música)
+            updatePlayerInfo();
+
+            // Cria um novo coração a cada intervalo de tempo (muito menos frequente)
+            setInterval(createHeart, 3000); // Cria um coração a cada 3 segundos
+            
+            // Garante que alguns corações já existam ao carregar a página
+            for (let i = 0; i < numberOfHearts; i++) {
+                createHeart();
+            }
+        });
+    </script>
+</body>
+</html>
+
