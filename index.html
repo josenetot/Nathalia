@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados e Configurações Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma mensagem especial e carinhosa para a Nathália Íngrid, com todo o meu amor.">
+    <meta name="author" content="Seu Amor">
+    <title>Sempre Você, Meu Amor ❤️</title>
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <style>
+        /* ==========================================================================
+           1. ESTILOS GLOBAIS E VARIÁVEIS
+           ========================================================================== */
+        
+        /* Melhora a renderização da fonte */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Variáveis de cor para fácil manutenção */
+        :root {
+            --primary-rose: #FCE4EC;
+            --light-rose: #FFF8FB;
+            --accent-rose: #FF69B4;
+            --text-dark-gray: #3A3A3A;
+            --white-pure: #FFFFFF;
+        }
+
+        /* Estilo base do corpo da página */
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, var(--light-rose), var(--primary-rose));
+            color: var(--text-dark-gray);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==========================================================================
+           2. ANIMAÇÕES E ELEMENTOS DECORATIVOS
+           ========================================================================== */
+        
+        /* Container para os corações caindo */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        /* Estilo individual dos corações */
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 105, 180, 0.6);
+            opacity: 0;
+            animation: fall 15s linear infinite;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+        }
+
+        /* Animação de queda */
+        @keyframes fall {
+            0% { transform: translateY(-10vh) scale(0.7); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(100vh) scale(1.1); opacity: 0; }
+        }
+
+        /* ==========================================================================
+           3. ESTILOS DO CONTEÚDO PRINCIPAL
+           ========================================================================== */
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 4em;
+            color: var(--accent-rose);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.8em;
+            margin-top: 35px;
+            color: var(--text-dark-gray);
+            font-weight: 400;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+
+        .foto-container {
+            margin-top: 30px;
+            display: inline-block;
+            border: 6px solid var(--accent-rose);
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 15px var(--accent-rose);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .foto-container:hover {
+            transform: scale(1.04) rotate(1deg);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25), 0 0 20px var(--accent-rose);
+        }
+
+        .foto-container img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        /* Botão principal de coração para a mensagem */
+        .heart-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 100px;
+            color: #FF0000;
+            margin-top: 40px;
+            animation: pulse 2s infinite cubic-bezier(0.66, 0, 0.34, 1);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.6));
+            will-change: transform;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart-button:active {
+            transform: scale(0.9);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.28); }
+        }
+
+        /* Bloco da mensagem que aparece */
+        #mensagem {
+            font-family: 'Lora', serif;
+            font-size: 1.5em;
+            line-height: 1.7;
+            margin: 50px auto 0 auto;
+            display: none;
+            animation: fadeIn 2s ease-in-out forwards;
+            white-space: pre-wrap;
+            max-width: 900px;
+            padding: 30px;
+            color: var(--text-dark-gray);
+            background-color: var(--white-pure);
+            border-radius: 18px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           4. BOTÃO DE PLAY SIMPLIFICADO
+           ========================================================================== */
+
+        .play-music-button {
+            margin-top: 50px;
+            background-color: var(--accent-rose);
+            color: var(--white-pure);
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .play-music-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.7);
+        }
+
+        .play-music-button svg {
+            width: 40px;
+            height: 40px;
+            fill: currentColor;
+            margin-left: 5px; 
+        }
+
+        .play-music-button svg.pause-icon {
+            margin-left: 0;
+        }
+        
+        /* ==========================================================================
+           5. GALERIA DE FOTOS
+           ========================================================================== */
+
+        .gallery-section {
+            margin-top: 100px;
+            padding: 50px 30px;
+            background-color: var(--white-pure);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: var(--accent-rose);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+        }
+        
+        /* ==========================================================================
+           6. LIGHTBOX (VISUALIZADOR DE IMAGEM)
+           ========================================================================== */
+
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .lightbox-image {
+            max-width: calc(100vw - 120px);
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
+            color: var(--white-pure);
+            font-size: 1.2em;
+            margin-top: 15px;
+            max-width: 70vw;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-close, .lightbox-nav {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white-pure);
+            cursor: pointer;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .lightbox-close svg, .lightbox-nav svg { width: 30px; height: 30px; fill: currentColor; }
+        .lightbox-close { top: 15px; right: 15px; }
+        .lightbox-nav { top: 50%; transform: translateY(-50%); }
+
+        .lightbox-close:hover { transform: scale(1.1) rotate(90deg); }
+        .lightbox-nav:hover { transform: translateY(-50%) scale(1.1); }
+        .lightbox-nav.prev { left: 15px; }
+        .lightbox-nav.next { right: 15px; }
+
+        /* ==========================================================================
+           7. RESPONSIVIDADE
+           ========================================================================== */
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5em; }
+            h2 { font-size: 1.7em; }
+            .foto-container img { width: 220px; height: 220px; }
+            #mensagem { font-size: 1.3em; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .gallery-item img { height: 220px; }
+            .lightbox-nav { width: 45px; height: 45px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 1.4em; }
+            .foto-container img { width: 180px; height: 180px; }
+            #mensagem { font-size: 1.1em; }
+            .gallery-grid { gap: 15px; }
+            .gallery-item img { height: 180px; }
+            .lightbox-nav { bottom: 15px; top: auto; transform: none; }
+            .lightbox-nav:hover { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Container para os corações caindo no fundo -->
+    <div class="hearts-container"></div>
+
+    <!-- Cabeçalho principal -->
+    <header>
+        <h1>Sempre Você, Meu Amor</h1>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Foto principal circular -->
+        <div class="foto-container">
+            <!-- ATUALIZE A FOTO PRINCIPAL AQUI -->
+            <img id="main-photo" src="3.jpg" alt="Foto especial de Nathália Íngrid e eu" onerror="this.onerror=null; this.src='https://placehold.co/280x280/FCE4EC/FF69B4?text=Nossa+Foto';">
+        </div>
+
+        <!-- Chamada para a mensagem -->
+        <h2> Clique no coração ♥ </h2>
+        <button class="heart-button" onclick="mostrarMensagem()" aria-label="Toque para ver a mensagem">❤️</button>
+
+        <!-- Elemento onde a mensagem será exibida -->
+        <p id="mensagem"></p>
+
+        <!-- Botão de Play Simplificado -->
+        <button id="playMusicBtn" class="play-music-button" aria-label="Tocar Música">
+            <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" class="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        
+        
+
+        <!-- Elemento de áudio, fica oculto na página -->
+        <audio id="musica" loop>
+            <source src="uadon.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- Seção da Galeria de Fotos -->
+        <section class="gallery-section">
+            <h2>Galeria</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- As fotos da galeria serão inseridas aqui pelo JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox (Visualizador de Imagem) -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fechar Imagem">
+            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+        <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Imagem Anterior">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Imagem Ampliada" class="lightbox-image" id="lightboxImage">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Próxima Imagem">
+            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        /* ==========================================================================
+           ÁREA DE CONFIGURAÇÃO - EDITE AQUI!
+           ========================================================================== */
+
+        // 1. Mensagem principal
+        const mensagemUnica = `
+        Feliz Dia dos Namorados!
+É bom ter você por perto, dividir a vida, as conversas e os dias. Que a gente continue assim, leve e de verdade.
+
+No fim das contas, estar com você faz tudo ficar mais fácil de encarar. 💛
+
+        `;
+
+        // 2. Caminhos das suas 4 fotos da galeria.
+        //    - O 'alt' é a legenda que aparece quando a imagem é aberta.
+        const galeria = [
+            { src: "2.jpg", alt: "🌹" },
+            { src: "1.jpg", alt: "🤍" },
+            { src: "4.jpg", alt: "♥️" },
+            { src: "5.jpg", alt: "🥰" }
+            
+        ];
+
+        /* ==========================================================================
+           FIM DA ÁREA DE CONFIGURAÇÃO
+           ========================================================================== */
+
+        const musica = document.getElementById("musica");
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentImageIndex = 0;
+
+        function init() {
+            setupEventListeners();
+            createHearts(15);
+            populateGallery();
+        }
+
+        function populateGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            if (!galleryGrid) return;
+            galleryGrid.innerHTML = '';
+            galeria.forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.onclick = () => openLightbox(index);
+                
+                const image = document.createElement('img');
+                image.src = img.src;
+                image.alt = img.alt;
+                image.loading = 'lazy';
+                image.onerror = function() {
+                    this.onerror = null;
+                    this.src = `https://placehold.co/400x400/FCE4EC/FF69B4?text=Erro+na+Foto+${index + 1}`;
+                };
+                
+                item.appendChild(image);
+                galleryGrid.appendChild(item);
+            });
+        }
+        
+        window.mostrarMensagem = () => {
+            const mensagemElement = document.getElementById("mensagem");
+            mensagemElement.style.display = "block";
+            mensagemElement.innerText = mensagemUnica;
+        };
+
+        function toggleMusic() {
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+            if (musica.paused) {
+                musica.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            } else {
+                musica.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        }
+        
+        window.openLightbox = (index) => {
+            currentImageIndex = index;
+            updateLightboxImage();
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeLightbox = () => {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        window.navigateLightbox = (direction) => {
+            currentImageIndex = (currentImageIndex + direction + galeria.length) % galeria.length;
+            updateLightboxImage();
+        };
+
+        function updateLightboxImage() {
+            const imgData = galeria[currentImageIndex];
+            lightboxImage.src = imgData.src;
+            lightboxCaption.innerText = imgData.alt;
+        }
+
+        function createHearts(count) {
+            const container = document.querySelector('.hearts-container');
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerText = '❤️';
+                Object.assign(heart.style, {
+                    left: `${Math.random() * 100}vw`,
+                    fontSize: `${15 + Math.random() * 20}px`,
+                    animationDelay: `-${Math.random() * 15}s`
+                });
+                container.appendChild(heart);
+            }
+        }
+        
+        function setupEventListeners() {
+            document.getElementById('playMusicBtn').addEventListener('click', toggleMusic);
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (!lightboxOverlay.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+            });
+        }
+
+        init();
+    });
+    </script>
+</body>
+</html>
+
