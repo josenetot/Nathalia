@@ -43,7 +43,7 @@
             background: linear-gradient(135deg, var(--light-rose), var(--primary-rose));
             color: var(--text-dark-gray);
             min-height: 100vh;
-            display: flex;
+            display: block;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -255,7 +255,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, fr));
             gap: 30px;
         }
 
@@ -423,7 +423,7 @@
 
         <!-- Elemento de áudio, fica oculto na página -->
         <audio id="musica" loop>
-            <source src="uadon.mp3" type="audio/mp3">
+            <source src="uadson.mp3" type="audio/mp3">
             Seu navegador não suporta o elemento de áudio.
         </audio>
 
